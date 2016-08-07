@@ -1,0 +1,37 @@
+App\Entities\Country:
+    type: entity
+    repositoryClass: App\Repositories\CountryRepository
+    table: countries
+
+    uniqueConstraints:
+        uniq_countries_alpha_2:
+            columns: [ alpha_2 ]
+        uniq_countries_alpha_3:
+            columns: [ alpha_3 ]
+
+    id:
+        id:
+            type: smallint
+            generator:
+                strategy: NONE
+
+    fields:
+        name:
+            type: string
+            length: 255
+
+        alpha2:
+            type: string
+            length: 2
+            column: alpha_2
+
+        alpha3:
+            type: string
+            length: 3
+            column: alpha_3
+
+        createdAt:
+            type: datetime
+
+        updatedAt:
+            type: datetime

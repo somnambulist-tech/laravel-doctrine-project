@@ -1,0 +1,83 @@
+App\Entities\Address:
+    type: entity
+    table: addresses
+    repositoryClass: App\Repositories\AddressRepository
+
+    uniqueConstraints:
+        uniq_addresses_uuid:
+            columns: [ uuid ]
+    indexes:
+        idx_address_type:
+            columns: [ type ]
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: auto
+            options:
+                unsigned: true
+
+    fields:
+        uuid:
+            type: guid
+
+        type:
+            type: string
+            length: 40
+
+        addressLine1:
+            type: string
+            length: 255
+            nullable: true
+
+        addressLine2:
+            type: string
+            length: 255
+            nullable: true
+
+        city:
+            type: string
+            length: 255
+            nullable: true
+
+        ward:
+            type: string
+            length: 255
+            nullable: true
+
+        state:
+            type: string
+            length: 255
+            nullable: true
+
+        postcode:
+            type: string
+            length: 50
+            nullable: true
+
+        latitude:
+           type: float
+           nullable: true
+
+        longitude:
+           type: float
+           nullable: true
+
+        createdBy:
+            type: string
+            length: 36
+
+        updatedBy:
+            type: string
+            length: 36
+
+        createdAt:
+            type: datetime
+
+        updatedAt:
+            type: datetime
+
+    manyToOne:
+        country:
+            targetEntity: App\Entities\Country

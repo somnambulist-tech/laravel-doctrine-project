@@ -1,0 +1,71 @@
+App\Entities\Organization:
+    type: entity
+    table: organizations
+    repositoryClass: App\Repositories\OrganizationRepository
+
+    uniqueConstraints:
+        uniq_organizations_uuid:
+            columns: [ uuid ]
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: auto
+            options:
+                unsigned: true
+
+    fields:
+        uuid:
+            type: guid
+
+        name:
+            type: string
+            length: 255
+
+        createdBy:
+            type: string
+            length: 36
+
+        updatedBy:
+            type: string
+            length: 36
+
+        createdAt:
+            type: datetime
+
+        updatedAt:
+            type: datetime
+
+    oneToMany:
+        children:
+            targetEntity: App\Entities\Organization
+            mappedBy: parent
+            orderBy: { 'name': 'ASC' }
+            cascade: [ 'persist' ]
+            fetch: EXTRA_LAZY
+
+
+    manyToOne:
+        parent:
+            targetEntity: App\Entities\Organization
+            inversedBy: children
+            orderBy: { 'name': 'ASC' }
+            cascade: [ 'persist' ]
+
+    manyToMany:
+        addresses:
+            targetEntity: App\Entities\Address
+            cascade: [ 'persist' ]
+            fetch: EXTRA_LAZY
+            indexBy: type
+            joinTable:
+                name: organization_addresses
+
+        users:
+            targetEntity: App\Entities\User
+            mappedBy: organizations
+            cascade: [ 'persist' ]
+            fetch: EXTRA_LAZY
+            joinTable:
+                name: user_organizations

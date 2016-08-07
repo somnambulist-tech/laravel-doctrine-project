@@ -1,0 +1,34 @@
+App\Entities\Permission:
+    type: entity
+    table: permissions
+    repositoryClass: App\Repositories\PermissionRepository
+
+    indexes:
+        idx_permissions_name:
+            columns: [ name ]
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: auto
+
+    fields:
+        name:
+            type: string
+            length: 255
+
+        createdBy:
+            type: string
+            length: 36
+
+        updatedBy:
+            type: string
+            length: 36
+
+        createdAt:
+            type: datetime
+
+        updatedAt:
+            type: datetime
+

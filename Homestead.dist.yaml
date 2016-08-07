@@ -1,0 +1,34 @@
+---
+ip: "192.168.10.150"
+memory: 2048
+cpus: 2
+hostname: laravel-doctrine-project
+name: laravel-doctrine-project
+provider: virtualbox
+mariadb: true
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: "/Users/<user>/Projects/laravel-doctrine-project"
+      to: "/home/vagrant/laravel-doctrine-project"
+
+sites:
+    - map: homestead.app
+      to: "/home/vagrant/laravel-doctrine-project/public"
+
+databases:
+    - homestead
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+ports:
+    - send: 33085
+      to: 3306
