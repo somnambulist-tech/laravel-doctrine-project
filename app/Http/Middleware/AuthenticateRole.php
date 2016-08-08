@@ -19,14 +19,12 @@ class AuthenticateRole
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \Closure                 $next
-     * @param  string|array             $roles
+     * @param  array                    $roles
      *
      * @return mixed
      */
-    public function handle($request, Closure $next, $roles)
+    public function handle($request, Closure $next, ...$roles)
     {
-        $roles = !is_array($roles) ? [$roles] : $roles;
-
         if (!$request->getUser()->hasRoleByName($roles)) {
             throw new UnauthorizedException(sprintf("Access denied. Role required: %s", implode(', ', $roles)));
         }
