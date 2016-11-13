@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Traits\Repository;
+namespace App\Support\Traits\Repository;
 
 /**
  * Trait FindByUUID
  *
- * @package    App\Traits\Repository
- * @subpackage App\Traits\Repository\FindByUUID
+ * @package    App\Support\Traits\Repository
+ * @subpackage App\Support\Traits\Repository\FindByUUID
  */
 trait FindByUUID
 {

@@ -2,9 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Contracts\Repository\PermissionRepository as PermissionRepositoryContract;
+use App\Support\Contracts\Repository\PermissionRepository as PermissionRepositoryContract;
 use App\Support\AppEntityRepository;
-use App\Traits\Repository\FindByName;
+use App\Support\Traits\Repository\FindByName;
 
 /**
  * Class PermissionRepository

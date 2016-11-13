@@ -3,7 +3,7 @@
 namespace App\Entities;
 
 use LaravelDoctrine\ACL\Contracts\Permission as PermissionContract;
-use App\Traits\Entity\HasToString;
+use App\Support\Traits\Entity\HasToString;
 use Somnambulist\Doctrine\Contracts\Trackable as TrackableContract;
 use Somnambulist\Doctrine\Traits\Trackable;
 

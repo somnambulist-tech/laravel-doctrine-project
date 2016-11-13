@@ -3,7 +3,7 @@
 namespace App\Entities;
 
 use App\Events\Domain as Event;
-use App\Traits\Entity\HasToString;
+use App\Support\Traits\Entity\HasToString;
 use Carbon\Carbon;
 use Doctrine\Common\Collections\ArrayCollection;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -18,6 +18,7 @@ use LaravelDoctrine\ACL\Organisations\BelongsToOrganisation;
 use LaravelDoctrine\ACL\Permissions\HasPermissions;
 use LaravelDoctrine\ACL\Roles\HasRoles;
 use LaravelDoctrine\ORM\Auth\Authenticatable;
+use LaravelDoctrine\ORM\Notifications\Notifiable;
 use Somnambulist\Doctrine\Contracts\Activatable as ActivatableContract;
 use Somnambulist\Doctrine\Contracts\GloballyTrackable as GloballyTrackableContract;
 use Somnambulist\Doctrine\Traits\Activatable;
@@ -50,6 +51,7 @@ class User implements
     use HasRoles;
     use HasPermissions;
     use HasToString;
+    use Notifiable;
     use RaisesDomainEvents;
 
     /**

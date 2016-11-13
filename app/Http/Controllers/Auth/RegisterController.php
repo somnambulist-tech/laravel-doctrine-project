@@ -5,32 +5,30 @@ namespace App\Http\Controllers\Auth;
 use App\Entities\User;
 use App\Support\AppController;
 use Doctrine\ORM\EntityManager;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Ramsey\Uuid\Uuid;
-use Validator;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 /**
- * Class AuthController
+ * Class RegisterController
  *
  * @package    App\Http\Controllers\Auth
- * @subpackage App\Http\Controllers\Auth\AuthController
+ * @subpackage App\Http\Controllers\Auth\RegisterController
  */
-class AuthController extends AppController
+class RegisterController extends AppController
 {
-
     /*
     |--------------------------------------------------------------------------
-    | Registration & Login Controller
+    | Register Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
+    | This controller handles the registration of new users as well as their
+    | validation and creation. By default this controller uses a trait to
+    | provide this functionality without requiring any additional code.
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use RegistersUsers;
 
     /**
      * Where to redirect users after login / registration.
@@ -44,16 +42,14 @@ class AuthController extends AppController
      */
     protected $em;
 
-
-
     /**
-     * Constructor.
+     * Create a new controller instance.
      *
      * @param EntityManager $em
      */
     public function __construct(EntityManager $em)
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->middleware('guest');
 
         $this->em = $em;
     }
@@ -67,7 +63,8 @@ class AuthController extends AppController
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        return Validator::make(
+            $data, [
             'name'     => 'required|max:255',
             'email'    => sprintf('required|email|max:255|unique:%s,email', User::class),
             'password' => 'required|min:8|confirmed',
@@ -77,7 +74,8 @@ class AuthController extends AppController
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
+     *
      * @return User
      */
     protected function create(array $data)

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Contracts\Entity;
+namespace App\Support\Contracts\Entity;
 
 use App\Entities\Address;
 
 /**
  * Interface HasAddress
  *
- * @package    App\Contracts\Entity
- * @subpackage App\Contracts\Entity\HasAddress
+ * @package    App\Support\Contracts\Entity
+ * @subpackage App\Support\Contracts\Entity\HasAddress
  */
 interface HasAddress
 {

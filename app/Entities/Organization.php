@@ -4,7 +4,7 @@ namespace App\Entities;
 
 use App\Enumerations\AddressType;
 use App\Events\Domain as Event;
-use App\Traits\Entity\HasToString;
+use App\Support\Traits\Entity\HasToString;
 use Doctrine\Common\Collections\ArrayCollection;
 use LaravelDoctrine\ACL\Contracts\Organisation as OrganizationContract;
 use Somnambulist\Doctrine\Contracts\GloballyTrackable as GloballyTrackableContract;

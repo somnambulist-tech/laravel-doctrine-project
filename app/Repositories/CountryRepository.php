@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Contracts\Repository\CountryRepository as CountryRepositoryContract;
+use App\Support\Contracts\Repository\CountryRepository as CountryRepositoryContract;
 use App\Support\AppEntityRepository;
 
 /**

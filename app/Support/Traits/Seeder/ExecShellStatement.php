@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Traits\Seeder;
+namespace App\Support\Traits\Seeder;
 
 /**
  * Trait ExecShellStatement
  *
- * @package    App\Traits\Seeder
- * @subpackage App\Traits\Seeder\ExecShellStatement
+ * @package    App\Support\Traits\Seeder
+ * @subpackage App\Support\Traits\Seeder\ExecShellStatement
  */
 trait ExecShellStatement
 {

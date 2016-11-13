@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Contracts\Repository\OrganizationRepository as OrganizationRepositoryContract;
+use App\Support\Contracts\Repository\OrganizationRepository as OrganizationRepositoryContract;
 use App\Support\AppEntityRepository;
 
 /**

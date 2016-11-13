@@ -5,6 +5,9 @@ because bootstrapping projects with the same requirements is tedious.
 
 Use this to kick-start a Doctrine based Laravel app.
 
+ * 1.X Laravel 5.2.* based project
+ * 2.X Laravel 5.3.* based project
+
 Included are the following:
 
  * Barryvdh Debugbar
@@ -73,3 +76,10 @@ The User and Organization entities support Domain Events:
  * then use the artisan commands as above
 
 The standard Laravel welcome app + authentication have been setup and converted to Twig.
+
+## Additional Helper Scripts
+
+ * `cache_build.sh` - creates caches for routes, container etc.
+ * `cache_clean.sh` - clears all caches including Doctrine query caches
+ * `vagrant_db_reset.sh` - drops and rebuilds the database (for development only)
+ * `vagrant_refresh.sh` - fully refreshes all applications files including composer update and npm install

@@ -2,9 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Contracts\Repository\RoleRepository as RoleRepositoryContract;
+use App\Support\Contracts\Repository\RoleRepository as RoleRepositoryContract;
 use App\Support\AppEntityRepository;
-use App\Traits\Repository\FindByName;
+use App\Support\Traits\Repository\FindByName;
 
 /**
  * Class RoleRepository

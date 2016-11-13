@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Contracts\Repository\AddressRepository as AddressRepositoryContract;
+use App\Support\Contracts\Repository\AddressRepository as AddressRepositoryContract;
 use App\Support\AppEntityRepository;
 
 /**

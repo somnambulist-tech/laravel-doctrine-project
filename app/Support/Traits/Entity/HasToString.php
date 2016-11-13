@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Traits\Entity;
+namespace App\Support\Traits\Entity;
 
 use Somnambulist\Doctrine\Contracts\Nameable as NameableContract;
 
 /**
  * Trait HasToString
  *
- * @package    App\Traits\Entity
- * @subpackage App\Traits\Entity\HasToString
+ * @package    App\Support\Traits\Entity
+ * @subpackage App\Support\Traits\Entity\HasToString
  */
 trait HasToString
 {

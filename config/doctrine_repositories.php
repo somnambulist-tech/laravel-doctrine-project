@@ -30,32 +30,32 @@ return [
         [
             'repository' => App\Repositories\AddressRepository::class,
             'entity'     => App\Entities\Address::class,
-            'alias'      => App\Contracts\Repository\AddressRepository::class,
+            'alias'      => App\Support\Contracts\Repository\AddressRepository::class,
         ],
         [
             'repository' => App\Repositories\CountryRepository::class,
             'entity'     => App\Entities\Country::class,
-            'alias'      => App\Contracts\Repository\CountryRepository::class,
+            'alias'      => App\Support\Contracts\Repository\CountryRepository::class,
         ],
         [
             'repository' => App\Repositories\OrganizationRepository::class,
             'entity'     => App\Entities\Organization::class,
-            'alias'      => App\Contracts\Repository\OrganizationRepository::class,
+            'alias'      => App\Support\Contracts\Repository\OrganizationRepository::class,
         ],
         [
             'repository' => App\Repositories\PermissionRepository::class,
             'entity'     => App\Entities\Permission::class,
-            'alias'      => App\Contracts\Repository\PermissionRepository::class,
+            'alias'      => App\Support\Contracts\Repository\PermissionRepository::class,
         ],
         [
             'repository' => App\Repositories\RoleRepository::class,
             'entity'     => App\Entities\Role::class,
-            'alias'      => App\Contracts\Repository\RoleRepository::class,
+            'alias'      => App\Support\Contracts\Repository\RoleRepository::class,
         ],
         [
             'repository' => App\Repositories\UserRepository::class,
             'entity'     => App\Entities\User::class,
-            'alias'      => App\Contracts\Repository\UserRepository::class,
+            'alias'      => App\Support\Contracts\Repository\UserRepository::class,
         ],
     ],
 

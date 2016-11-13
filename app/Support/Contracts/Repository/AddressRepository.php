@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Contracts\Repository;
+namespace App\Support\Contracts\Repository;
 
 use Doctrine\Common\Persistence\ObjectRepository;
 
 /**
  * Interface AddressRepository
  *
- * @package    App\Contracts\Repository
- * @subpackage App\Contracts\Repository\AddressRepository
+ * @package    App\Support\Contracts\Repository
+ * @subpackage App\Support\Contracts\Repository\AddressRepository
  */
 interface AddressRepository extends ObjectRepository
 {

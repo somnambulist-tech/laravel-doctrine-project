@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Traits\Repository;
+namespace App\Support\Traits\Repository;
 
 /**
  * Trait FindBySlug
  *
- * @package    App\Traits\Repository
- * @subpackage App\Traits\Repository\FindBySlug
+ * @package    App\Support\Traits\Repository
+ * @subpackage App\Support\Traits\Repository\FindBySlug
  */
 trait FindBySlug
 {

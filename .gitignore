@@ -24,6 +24,7 @@ tests/_output/*
 _ide_helper.php
 composer.lock
 Homestead.yaml
+public/css
 
 ### Vagrant template
 .vagrant/

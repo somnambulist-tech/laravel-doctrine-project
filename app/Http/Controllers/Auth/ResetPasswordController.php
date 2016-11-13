@@ -6,14 +6,13 @@ use App\Support\AppController;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 /**
- * Class PasswordController
+ * Class ResetPasswordController
  *
  * @package    App\Http\Controllers\Auth
- * @subpackage App\Http\Controllers\Auth\PasswordController
+ * @subpackage App\Http\Controllers\Auth\ResetPasswordController
  */
-class PasswordController extends AppController
+class ResetPasswordController extends AppController
 {
-
     /*
     |--------------------------------------------------------------------------
     | Password Reset Controller
@@ -28,7 +27,14 @@ class PasswordController extends AppController
     use ResetsPasswords;
 
     /**
-     * Constructor.
+     * Where to redirect users after resetting their password.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/';
+
+    /**
+     * Create a new controller instance.
      */
     public function __construct()
     {

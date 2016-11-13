@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Traits\Repository;
+namespace App\Support\Traits\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Trait FindByName
  *
- * @package    App\Traits\Repository
- * @subpackage App\Traits\Repository\FindByName
+ * @package    App\Support\Traits\Repository
+ * @subpackage App\Support\Traits\Repository\FindByName
  */
 trait FindByName
 {

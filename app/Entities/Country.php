@@ -2,7 +2,7 @@
 
 namespace App\Entities;
 
-use App\Traits\Entity\HasToString;
+use App\Support\Traits\Entity\HasToString;
 use Somnambulist\Doctrine\Contracts\Identifiable as IdentifiableContract;
 use Somnambulist\Doctrine\Contracts\Nameable as NameableContract;
 use Somnambulist\Doctrine\Contracts\Timestampable as TimestampableContract;

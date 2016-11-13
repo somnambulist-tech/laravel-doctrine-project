@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Contracts\Repository\UserRepository as UserRepositoryContract;
+use App\Support\Contracts\Repository\UserRepository as UserRepositoryContract;
 use App\Entities\User;
 use App\Support\AppEntityRepository;
-use App\Traits\Repository\FindByName;
-use App\Traits\Repository\FindByUUID;
+use App\Support\Traits\Repository\FindByName;
+use App\Support\Traits\Repository\FindByUUID;
 
 /**
  * Class UserRepository

@@ -5,7 +5,7 @@ namespace App\Entities;
 use Doctrine\Common\Collections\ArrayCollection;
 use LaravelDoctrine\ACL\Contracts\Role as RoleContract;
 use LaravelDoctrine\ACL\Permissions\HasPermissions;
-use App\Traits\Entity\HasToString;
+use App\Support\Traits\Entity\HasToString;
 use Somnambulist\Doctrine\Contracts\Trackable as TrackableContract;
 use Somnambulist\Doctrine\Traits\Trackable;
 

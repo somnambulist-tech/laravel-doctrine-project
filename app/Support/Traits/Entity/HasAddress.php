@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Traits\Entity;
+namespace App\Support\Traits\Entity;
 
 use App\Entities\Address;
 
 /**
  * Class HasAddress
  *
- * @package    App\Traits\Entity
- * @subpackage App\Traits\Entity\HasAddress
+ * @package    App\Support\Traits\Entity
+ * @subpackage App\Support\Traits\Entity\HasAddress
  */
 trait HasAddress
 {
