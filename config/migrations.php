@@ -24,7 +24,7 @@ return [
         | the migrations on disk haven't actually been run in the database.
         |
         */
-        'table'     => 'migrations',
+        'table'     => 'migrations_default',
         /*
         |--------------------------------------------------------------------------
         | Migration Directory
@@ -34,7 +34,7 @@ return [
         | manager. User different directories for each entity manager.
         |
         */
-        'directory' => database_path('migrations'),
+        'directory' => database_path('migrations/default'),
         /*
         |--------------------------------------------------------------------------
         | Migration Namespace
@@ -44,7 +44,7 @@ return [
         | the entity manager name (connection name).
         |
         */
-        'namespace' => 'Database\\Migrations',
+        'namespace' => 'Database\\Migrations\\DefaultEM',
         /*
         |--------------------------------------------------------------------------
         | Migration Repository Table
