@@ -1,6 +1,6 @@
 {
     "name": "somnambulist/laravel-doctrine-project",
-    "description": "Laravel 5.2 with Doctrine and Goodies",
+    "description": "Laravel 5.3 with Doctrine, Twig and other Goodies",
     "keywords": ["framework", "laravel", "doctrine", "twig"],
     "license": "MIT",
     "type": "project",
@@ -51,11 +51,6 @@
     "scripts": {
         "post-install-cmd": [
             "php artisan clear-compiled",
-            "php artisan doctrine:clear:metadata:cache",
-            "php artisan doctrine:clear:query:cache",
-            "php artisan doctrine:clear:result:cache",
-            "php artisan doctrine:generate:proxies",
-            "php artisan doctrine:generate:hydrators",
             "php artisan optimize"
         ],
         "pre-update-cmd": [
@@ -63,11 +58,6 @@
         ],
         "post-update-cmd": [
             "php artisan clear-compiled",
-            "php artisan doctrine:clear:metadata:cache",
-            "php artisan doctrine:clear:query:cache",
-            "php artisan doctrine:clear:result:cache",
-            "php artisan doctrine:generate:proxies",
-            "php artisan doctrine:generate:hydrators",
             "php artisan ide-helper:generate",
             "php artisan ide-helper:meta",
             "php artisan optimize"
