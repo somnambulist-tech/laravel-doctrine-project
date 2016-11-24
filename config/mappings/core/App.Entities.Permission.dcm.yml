@@ -12,6 +12,8 @@ App\Entities\Permission:
             type: integer
             generator:
                 strategy: auto
+            options:
+                unsigned: true
 
     fields:
         name:

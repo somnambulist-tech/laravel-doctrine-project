@@ -12,6 +12,8 @@ App\Entities\Role:
             type: integer
             generator:
                 strategy: auto
+            options:
+                unsigned: true
 
     fields:
         name:

@@ -18,6 +18,8 @@ App\Entities\User:
             type: integer
             generator:
                 strategy: auto
+            options:
+                unsigned: true
 
     fields:
         uuid:

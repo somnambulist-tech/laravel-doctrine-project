@@ -14,6 +14,8 @@ App\Entities\Country:
             type: smallint
             generator:
                 strategy: NONE
+            options:
+                unsigned: true
 
     fields:
         name:
