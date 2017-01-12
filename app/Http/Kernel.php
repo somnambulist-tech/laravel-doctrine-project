@@ -3,6 +3,8 @@
 namespace App\Http;
 
 use App\Http\Middleware;
+use Illuminate\Auth\Middleware\AuthenticateWithBasicAuth;
+use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Http;
 
@@ -53,9 +55,9 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth'       => Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'auth.basic' => AuthenticateWithBasicAuth::class,
         'auth.role'  => Middleware\AuthenticateRole::class,
-        'can'        => Http\Middleware\Authorize::class,
+        'can'        => Authorize::class,
         'guest'      => Middleware\RedirectIfAuthenticated::class,
         'throttle'   => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
