@@ -6,63 +6,23 @@
  * @subpackage TestCase
  * @author     Dave Redfern
  */
-class TestCase extends Illuminate\Foundation\Testing\TestCase
+class TestCase extends \Codeception\Test\Unit
 {
 
-    /**
-     * The base URL to use while testing the application.
-     *
-     * @var string
-     */
-    protected $baseUrl = 'http://localhost';
+    use EnsureLaravelModuleDoctrineClosed;
 
     /**
-     * Creates the application.
-     *
-     * @return \Illuminate\Foundation\Application
+     * @var \UnitTester
      */
-    public function createApplication()
+    protected $tester;
+
+    /**
+     * Ensure Doctrine shutdown is always called
+     */
+    protected function tearDown()
     {
-        $app = require __DIR__.'/../../bootstrap/app.php';
+        $this->ensureDoctrineClosed();
 
-        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
-
-        return $app;
-    }
-
-    /**
-     * Protect test setup
-     */
-    final protected function setUp()
-    {
-        parent::setUp();
-
-        $this->customTestSetUp();
-    }
-
-    /**
-     * Protect test tear down
-     */
-    final protected function tearDown()
-    {
-        parent::tearDown();
-
-        $this->customTestTearDown();
-    }
-
-    /**
-     * Override this method to perform custom setup operations
-     */
-    protected function customTestSetUp()
-    {
-
-    }
-
-    /**
-     * Override this method to perform custom teardown operations
-     */
-    protected function customTestTearDown()
-    {
-
+        $this->_after();
     }
 }
