@@ -54,7 +54,12 @@ return [
                     Somnambulist\Doctrine\EventSubscribers\TimestampableEventSubscriber::class,
                     Somnambulist\Doctrine\EventSubscribers\UuidEventSubscriber::class,
                     Somnambulist\Doctrine\EventSubscribers\VersionableEventSubscriber::class,
+
+                    // fires domain events from entities onFlush
                     Somnambulist\DomainEvents\DomainEventListener::class,
+
+                    // Domain event subscribers / anything that needs repositories or entity manager
+                    // should be registered in EventServiceProvider adding them here will cause infinite loops.
                 ]
             ],
             'filters'    => [],
@@ -157,10 +162,22 @@ return [
     | Available: apc|array|file|memcached|redis|void
     |
     */
-    'cache'                     => [
-        'default'      => env('DOCTRINE_CACHE', 'array'),
-        'namespace'    => null,
-        'second_level' => false,
+    'cache' => [
+        'second_level'     => false,
+        'default'          => env('DOCTRINE_CACHE', 'array'),
+        'namespace'        => null,
+        'metadata'         => [
+            'driver'       => env('DOCTRINE_METADATA_CACHE', env('DOCTRINE_CACHE', 'array')),
+            'namespace'    => null,
+        ],
+        'query'            => [
+            'driver'       => env('DOCTRINE_QUERY_CACHE', env('DOCTRINE_CACHE', 'array')),
+            'namespace'    => null,
+        ],
+        'result'           => [
+            'driver'       => env('DOCTRINE_RESULT_CACHE', env('DOCTRINE_CACHE', 'array')),
+            'namespace'    => null,
+        ],
     ],
     /*
     |--------------------------------------------------------------------------
@@ -184,4 +201,16 @@ return [
      |
      */
     'doctrine_presence_verifier' => true,
+
+    /*
+     |--------------------------------------------------------------------------
+     | Notifications
+     |--------------------------------------------------------------------------
+     |
+     |  Doctrine notifications channel
+     |
+     */
+    'notifications'              => [
+        'channel' => 'database'
+    ]
 ];

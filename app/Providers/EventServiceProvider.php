@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Event;
+use Doctrine\ORM\EntityManager;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use LaravelDoctrine\ORM\IlluminateRegistry;
 
 /**
  * Class EventServiceProvider
@@ -13,15 +14,23 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
  */
 class EventServiceProvider extends ServiceProvider
 {
+
     /**
      * The event listener mappings for the application.
      *
      * @var array
      */
     protected $listen = [
-        'App\Events\SomeEvent' => [
-            'App\Listeners\EventListener',
-        ],
+
+    ];
+
+    /**
+     * Doctrine Domain Event Subscribers
+     *
+     * @var array
+     */
+    protected $doctrineSubscribers = [
+
     ];
 
     /**
@@ -33,6 +42,23 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+        $this->registerDoctrineDomainEventSubscribers();
+    }
+
+    /**
+     * Register all the domain event subscribers
+     */
+    private function registerDoctrineDomainEventSubscribers()
+    {
+        /** @var EntityManager $em */
+        $registry = $this->app->make(IlluminateRegistry::class);
+
+        foreach ($this->doctrineSubscribers as $em => $subscribers) {
+            $em = $registry->getManager($em);
+
+            foreach ($subscribers as $subscriber) {
+                $em->getEventManager()->addEventSubscriber($this->app->make($subscriber));
+            }
+        }
     }
 }
