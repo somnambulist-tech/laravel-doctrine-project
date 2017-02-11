@@ -7,6 +7,7 @@ Use this to kick-start a Doctrine based Laravel app.
 
  * 1.X Laravel 5.2.* based project
  * 2.X Laravel 5.3.* based project
+ * 3.X Laravel 5.4.* based project
 
 Included are the following:
 
