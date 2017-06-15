@@ -26,7 +26,6 @@ echo "Running migrations..."
 ./artisan doctrine:migrations:migrate
 ./artisan ide-helper:generate
 ./artisan ide-helper:meta
-./artisan optimize
 
 echo "Updating npm / gulp..."
 npm install
