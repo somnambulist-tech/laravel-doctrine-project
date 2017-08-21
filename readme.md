@@ -71,7 +71,7 @@ The User and Organization entities support Domain Events:
  * `./artisan doctrine:schema:validate`
  * `./artisan doctrine:schema:create`
  * `./artisan db:seed`
- * `./artisan server`
+ * `./artisan serve`
  * to use Vagrant, update the Homestead.yaml with the project location
  * `vagrant up`
  * then use the artisan commands as above
